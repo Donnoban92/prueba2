@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start" >
+      <ion-back-button defaultHref="/home" text="Volver">
+    </ion-back-button>
+  
+    </ion-button>
+    <ion-title class="tituloPagina">Películas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @for (objetoPelicula of objetoPeliculas; track objetoPelicula.id) {
+  <ion-list class="listaPeliculas">
+    <ion-avatar slot="start">
+      <img src="{{objetoPelicula.poster_path}}" alt="">
+    </ion-avatar>
+    <ion-list>
+      <p>{{ objetoPelicula.title }}</p>
+      <p>{{ objetoPelicula.category }}</p>
+    </ion-list>
+    
+  </ion-list>
+  }
+</ion-content>
